@@ -1,0 +1,281 @@
+.body_van {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.body_van #van {
+  position: relative;
+  animation: van 10s infinite;
+}
+.body_van #van .boxes {
+  position: absolute;
+  width: 250px;
+  height: 200px;
+  top: -200px;
+  overflow: hidden;
+}
+.body_van #van .wheel {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 12px solid #283149;
+  border-radius: 50%;
+  background: white;
+  bottom: -30px;
+  animation: wheel 10s infinite ease-out;
+}
+.body_van #van .wheel:after {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 20px;
+  background: #D5D8E1;
+  left: 23px;
+  top: 15px;
+}
+.body_van #van .wheel.left {
+  left: 30px;
+}
+.body_van #van .wheel.right {
+  right: 30px;
+}
+.body_van #van .shade {
+  position: absolute;
+  width: 250px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  bottom: -30px;
+  left: 50px;
+  border-radius: 50%;
+}
+.body_van #van .door {
+  position: absolute;
+  width: 5px;
+  height: 160px;
+  background: #E19033;
+  left: -25px;
+  bottom: 10px;
+  transform: rotate(-20deg);
+}
+.body_van #van .door .chain {
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  top: 20px;
+  background: #E19033;
+  transform: rotate(20deg);
+}
+.body_van #van .body {
+  position: relative;
+  width: 350px;
+  height: 200px;
+  background: #F2F4F6;
+  border-radius: 20px 130px 20px 20px;
+  overflow: hidden;
+}
+.body_van #van .body .window {
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  top: 20px;
+  right: 0px;
+  background: #D4E7F6;
+  border-radius: 10px 10px 0px 10px;
+  overflow: hidden;
+}
+.body_van #van .body .window .window__shade {
+  position: absolute;
+  background: #B4D7F1;
+  width: 100px;
+  height: 50px;
+  left: -40px;
+  top: 40px;
+  transform: rotate(45deg);
+}
+.body_van #van .body .fender {
+  position: absolute;
+  width: 350px;
+  height: 20px;
+  background: #283149;
+  bottom: 0px;
+}
+.body_van #van .body .mirror {
+  position: absolute;
+  background: #283149;
+  width: 10px;
+  height: 20px;
+  right: 35px;
+  top: 90px;
+  border-radius: 0px 10px 10px 0px;
+}
+.body_van #van .body .light.front {
+  position: absolute;
+  width: 15px;
+  height: 25px;
+  background: #D5D8E1;
+  right: 0px;
+  bottom: 40px;
+  border-radius: 10px 0px 0px 20px;
+}
+.body_van #van .body .light.back {
+  position: absolute;
+  width: 15px;
+  height: 25px;
+  left: 0px;
+  bottom: 40px;
+  border-radius: 0px 10px 10px 0px;
+  background: #F2F4F6;
+}
+.body_van #van .body .decal {
+  background: #E19033;
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+}
+.body_van #van .body .decal__mask {
+  position: absolute;
+  background: red;
+  width: 300px;
+  height: 200px;
+  border-radius: 200px;
+  left: 50px;
+  background: #F2F4F6;
+}
+.body_van #van .body .logo {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #E19033;
+  top: 40px;
+  left: 100px;
+  border-radius: 100% 40% 30% 40%;
+}
+.body_van #van .body .door-mark {
+  position: absolute;
+  width: 70px;
+  height: 160px;
+  border-radius: 20px 20px 0px 0px;
+  left: -50px;
+  bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.body_van .box {
+  position: absolute;
+  bottom: 0px;
+  width: 70px;
+  height: 70px;
+  left: 20px;
+  background: #DEB07A;
+}
+.body_van .box:after {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 70px;
+  background: #CA9E69;
+  transform: skew(0deg, 20deg);
+  right: -10px;
+  top: 2px;
+}
+.body_van .box__2 {
+  transform: scale(0.4);
+  left: 60px;
+  bottom: -21px;
+  background: #CA9E69;
+  z-index: 99;
+}
+.body_van .box__2:after {
+  background: #A67641;
+}
+.body_van .box__3 {
+  transform: scaleX(0.6) scaleY(1.2);
+  left: 80px;
+  bottom: 0px;
+  background: #DEB07A;
+}
+.body_van .box__3:after {
+  background: #A67641;
+}
+.body_van .box__4 {
+  transform: scaleX(0.6) scaleY(0.8);
+  left: 120px;
+  bottom: -10px;
+  background: #CA9E69;
+}
+.body_van .box__4:after {
+  background: #A67641;
+}
+.body_van .box__5 {
+  transform: scaleX(0.6) scaleY(0.4);
+  left: 150px;
+  bottom: -25px;
+  background: #DEB07A;
+}
+.body_van .box__5:after {
+  background: #CA9E69;
+}
+.body_van .box__10 {
+  transform: scaleX(0.8) scaleY(1);
+  left: -5px;
+  top: 70px;
+  background: #DEB07A;
+}
+.body_van .box__10:after {
+  background: #CA9E69;
+}
+.body_van .box__11 {
+  transform: scaleX(0.41) scaleY(0.7);
+  left: -17px;
+  top: 20px;
+  background: #CA9E69;
+}
+.body_van .box__11:after {
+  background: #A67641;
+}
+.body_van .box__12 {
+  transform: scaleX(0.2) scaleY(1);
+  left: -25px;
+  top: -20px;
+  background: #DEB07A;
+}
+.body_van .box__12:after {
+  background: #A67641;
+}
+
+@keyframes wheel {
+  0% {
+    transform: rotate(-90deg);
+  }
+  10% {
+    transform: rotate(360deg);
+  }
+  20% {
+    transform: rotate(720deg);
+  }
+  80% {
+    transform: rotate(720deg);
+  }
+  90% {
+    transform: rotate(1080deg);
+  }
+  100% {
+    transform: rotate(1440deg);
+  }
+}
+@keyframes van {
+  0% {
+    transform: translateX(-1000px);
+  }
+  20% {
+    transform: translateX(0px);
+  }
+  80% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(1000px);
+  }
+}

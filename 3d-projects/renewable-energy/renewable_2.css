@@ -1,0 +1,69 @@
+.renewable_2 {
+  position: relative;
+  height: 545px;
+  width: 100%;
+  background-color: rgb(20, 20, 20);
+  overflow: hidden;
+background: rgb(252,82,0);
+background: linear-gradient(14deg, rgba(252,82,0,1) 0%, rgba(237,0,255,1) 50%, rgba(0,162,255,1) 100%);
+}
+
+.renewable_2 .mover {
+  position: relative;
+  height: 100%;
+  top: -50%;
+}
+
+.renewable_2 .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  margin: 20px;
+  transition: 4s linear;
+  opacity: 0.9;
+}
+
+.renewable_2 .circle::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  box-shadow: 0 0px 0px 0px rgba(255,255,255,1);
+  border-radius: 100%;
+}
+
+.renewable_2 button {
+  width: 80px;
+  height: 40px;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+background: rgb(237,0,255);
+background: linear-gradient(14deg, rgba(237,0,255,1) 0%, rgba(0,162,255,1) 100%);
+  border-radius: 10px;
+  color: white;
+  margin: 10px;
+  border: none;
+}
+
+.renewable_2 button:active {
+  background-color: darkred;
+}
+
+.renewable_2 .options {
+  position: absolute;
+  color: white;
+  font-family: Arial;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  width: fit-content;
+  border-radius: 10px;
+  text-align: center;
+}

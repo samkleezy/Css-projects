@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive');
+
+.body_procurement {
+  background:rgb(7, 7, 7);
+  position: relative;
+  height: 600px;
+}
+.body_procurement .cont{
+padding:0px;
+  margin:0px;
+  width:100%;
+  position:absolute;
+  top:100px;
+}
+.body_procurement .front{
+  position:absolute;
+  left:400px;
+  top:70px;
+  width:600px;
+  height:350px;
+  background: rgb(34, 34, 34);
+}
+.body_procurement #window{
+  position:absolute;
+  left:445px;
+  top:150px;
+  width:260px;
+  height:195px;
+  background: repeating-linear-gradient(
+  rgb(7, 7, 7),
+  rgb(7, 7, 7) 10px,
+  #333 10px,
+  #333 11px
+  );
+  box-shadow: 0px 0px 0px 15px rgb(51, 51, 51),5px 5px 15px 20px rgb(0,0,0,.5)  ;
+}
+.body_procurement #window::before{
+  content:"";
+  position:absolute;
+  position:absolute;
+  left:330px;
+  top:0px;
+  width:180px;
+  height:195px;
+  background: repeating-linear-gradient(
+  rgb(7, 7, 7),
+  rgb(7, 7, 7) 10px,
+  #333 10px,
+  #333 11px
+  );
+  box-shadow: 0px 0px 0px 15px rgb(51, 51, 51), 5px 5px 15px 20px rgb(0,0,0,.5) ;
+}
+
+.body_procurement .edge{
+  position:absolute;
+  position:absolute;
+  left:350px;
+  top:420px;
+  border-bottom: 20px solid rgb(51, 51, 51);
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  height: 0;
+  width: 600px;
+}
+.body_procurement .edge2{
+  position:absolute;
+  position:absolute;
+  left:370px;
+  top:40px;
+    border-bottom: 30px solid rgb(51, 51, 51);
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  height: 0;
+  width: 600px;
+  transform: rotatez(180deg);
+}
+.body_procurement .top{
+  position:absolute;
+  left:500px;
+  top:-50px;
+  width:300px;
+  height:75px;
+  background: rgb(30, 30, 30);
+  box-shadow: 0px 0px 0px 8px rgb(51, 51, 51);
+}
+.body_procurement .top::before{
+  content:"";
+  position:absolute;
+  top:82px;
+  left:20px;
+  transform: rotatez(0deg);
+  width:6px;
+  height:8px;
+  background: linear-gradient(to right, darkgrey,grey, darkgrey); 
+}
+.body_procurement .top::after{
+  content:"";
+  position:absolute;
+  top:82px;
+  left:270px;
+  transform: rotatez(0deg);
+  width:6px;
+  height:8px;
+  background: linear-gradient(to right, darkgrey,grey, darkgrey); 
+}
+.body_procurement .top h3{
+  position:absolute;
+  top:-40px;
+  left:45px;
+  color: #b33939;
+  font-size:50px;
+  text-shadow: 5px 5px 10px black;
+}
+.body_procurement #window p{
+  
+  position:absolute;
+  top:0px;
+  left:30px;
+  color:rgb(248,249,105);
+  font-size:50px;
+  font-family: 'Roboto', sans-serif;
+animation: flash 1s infinite linear;
+}
+@keyframes flash {
+  0% {
+    opacity:0.1;
+    text-shadow: 10px 0px 40px #ff9f43,-10px 0px 40px#ff9f43, 0px 0px 70px #ff9f43;
+  }
+  
+  2% {
+    opacity:1;
+    text-shadow: 10px 0px 40px #ff9f43,-10px 0px 40px#ff9f43, 0px 0px 70px #ff9f43;
+  }
+  8% {
+    opacity:0.1;
+    text-shadow: 10px 0px 40px #ff9f43,-10px 0px 40px#ff9f43, 0px 0px 70px #ff9f43;
+  }
+  9% {
+    opacity:1;
+    text-shadow: 10px 0px 40px #ff9f43,-10px 0px 40px#ff9f43, 0px 0px 70px #ff9f43;
+  }
+  12% {
+    opacity:0.1;
+    text-shadow: 10px 0px 40px #ff9f43,-10px 0px 40px#ff9f43, 0px 0px 70px #ff9f43;
+  }
+  20% {
+    opacity:1;
+    text-shadow: 10px 0px 40px #ff9f43,-10px 0px 40px#ff9f43, 0px 0px 70px #ff9f43;
+  }
+  25% {
+    opacity:0.3;
+    text-shadow: 10px 0px 40px #ff9f43,-10px 0px 40px#ff9f43, 0px 0px 70px #ff9f43;
+  }
+  30% {
+    opacity:1;
+    text-shadow: 10px 0px 40px #ff9f43,-10px 0px 40px#ff9f43, 0px 0px 70px #ff9f43;
+  }
+  
+  70% {
+    opacity:0.7;
+    text-shadow: 10px 0px 40px #ff9f43,-10px 0px 40px#ff9f43, 0px 0px 70px #ff9f43;
+  }
+  
+  72% {
+    opacity:0.2;
+    text-shadow: 10px 0px 40px #ff9f43,-10px 0px 40px#ff9f43, 0px 0px 70px #ff9f43;
+  }
+  
+  77% {
+    opacity:.9;
+    text-shadow: 10px 0px 40px #ff9f43,-10px 0px 40px#ff9f43, 0px 0px 70px #ff9f43;
+  }
+  100% {
+    opacity:.9;
+    text-shadow: 10px 0px 40px #ff9f43,-10px 0px 40px#ff9f43, 0px 0px 70px #ff9f43;
+  }
+}
+.body_procurement  .front p{
+    position:absolute;
+    color:rgb(100,100,100);
+    top:300px;
+    left:465px;
+    font-family: 'Pacifico', cursive;
+    text-shadow:3px 2px 2px rgba(0,0,0,.8);
+  }

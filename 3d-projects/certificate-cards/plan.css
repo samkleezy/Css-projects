@@ -1,0 +1,202 @@
+body {
+  width: 100%;
+}
+
+.map {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0 auto;
+  width: 730px;
+  padding-top: 50px;
+  z-index: 1;
+}
+
+.floor {
+  position: relative;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 500px;
+  height: 60px;
+  padding: 0;
+  transition: padding ease-in 300ms;
+}
+.floor:hover:not(:first-child) {
+  padding-top: 110px;
+  padding-bottom: 10px;
+}
+.floor:hover .plan {
+  transform: perspective(700px) translateX(120px) translateY(-100px) rotateX(45deg) rotateY(0deg) rotateZ(20deg);
+}
+.floor .label {
+  position: absolute;
+  bottom: 3px;
+  width: 24px;
+  line-height: 24px;
+  border-radius: 999px;
+  font-family: sans-serif;
+  text-align: center;
+  color: white;
+  z-index: 100;
+}
+.floor .label::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 1px;
+  left: 10px;
+  top: 12px;
+  z-index: -1;
+}
+.floor .plan {
+  position: relative;
+  display: flex;
+    justify-content: center;
+    width: 500px;
+  height: 300px;
+  transform: perspective(900px) translateX(120px) translateY(-100px) translateZ(0px) rotateX(60deg) rotateY(0deg) rotateZ(60deg);
+  transition: all ease-in 300ms;
+  z-index: 10;
+}
+
+.floor.f3 .label, .floor.f3 .label::after, .floor.f3 .plan, .floor.f3 .body_susana {
+  background-color: lightskyblue;
+}
+.floor.f3 .body_susana p {
+  color: lightskyblue;
+  font-size: 3em;
+  font-weight: 700;
+}
+.floor.f3 .body_susana p span::before {
+  z-index: 1;
+  color: rgba(0,0,0,0.2);
+  transform: scale(1.1, 1) skew(0deg, 20deg);
+}
+.floor.f3 .body_susana p span::after {
+  z-index: 2;
+  color: lightskyblue;
+  text-shadow: -1px 0 1px lightskyblue, 1px 0 1px rgba(0,0,0,0.8);
+  transform: rotateY(-40deg);
+}
+.floor.f3 .body_susana p span:hover::before {
+  transform: scale(1.1, 1) skew(0deg, 5deg);
+}
+.floor.f3 .body_susana p span:hover::after {
+  transform: rotateY(-10deg);
+}
+.floor.f3 .label, .floor.f3 .plan {
+  z-index: 30;
+}
+
+
+.floor.f2 .label, .floor.f2 .label::after, .floor.f2 .plan, .floor.f2 .body_susana {
+  background-color: khaki;
+}
+.floor.f2 .body_susana p {
+  color: khaki;
+  font-size: 3em;
+  font-weight: 700;
+}
+.floor.f2 .body_susana p span::before {
+  z-index: 1;
+  color: rgba(0,0,0,0.2);
+  transform: scale(1.1, 1) skew(0deg, 20deg);
+}
+.floor.f2 .body_susana p span::after {
+  z-index: 2;
+  color: khaki;
+  text-shadow: -1px 0 1px khaki, 1px 0 1px rgba(0,0,0,0.8);
+  transform: rotateY(-40deg);
+}
+.floor.f2 .body_susana p span:hover::before {
+  transform: scale(1.1, 1) skew(0deg, 5deg);
+}
+.floor.f2 .body_susana p span:hover::after {
+  transform: rotateY(-10deg);
+}
+.floor.f2 .label, .floor.f2 .plan {
+  z-index: 20;
+}
+
+.floor.f1 .label, .floor.f1 .label::after, .floor.f1 .plan, .floor.f1 .body_susana {
+  background-color: pink;
+}
+.floor.f1 .body_susana p {
+  color: pink;
+  font-size: 3em;
+  font-weight: 700;
+}
+.floor.f1 .body_susana p span::before {
+  z-index: 1;
+  color: rgba(0,0,0,0.2);
+  transform: scale(1.1, 1) skew(0deg, 20deg);
+}
+.floor.f1 .body_susana p span::after {
+  z-index: 2;
+  color: pink;
+  text-shadow: -1px 0 1px pink, 1px 0 1px rgba(0,0,0,0.8);
+  transform: rotateY(-40deg);
+}
+.floor.f1 .body_susana p span:hover::before {
+  transform: scale(1.1, 1) skew(0deg, 5deg);
+}
+.floor.f1 .body_susana p span:hover::after {
+  transform: rotateY(-10deg);
+}
+.floor.f1 .label, .floor.f1 .plan {
+  z-index: 10;
+}
+
+.floor.f0 .label, .floor.f0 .label::after, .floor.f0 .plan, .floor.f0 .body_susana {
+  background-color: lightblue;
+}
+.floor.f0 .body_susana p {
+  color: lightblue;
+  font-size: 3em;
+  font-weight: 700;
+}
+.floor.f0 .body_susana p span::before {
+  z-index: 1;
+  color: rgba(0,0,0,0.2);
+  transform: scale(1.1, 1) skew(0deg, 20deg);
+}
+.floor.f0 .body_susana p span::after {
+  z-index: 2;
+  color: lightblue;
+  text-shadow: -1px 0 1px lightblue, 1px 0 1px rgba(0,0,0,0.8);
+  transform: rotateY(-40deg);
+}
+.floor.f0 .body_susana p span:hover::before {
+  transform: scale(1.1, 1) skew(0deg, 5deg);
+}
+.floor.f0 .body_susana p span:hover::after {
+  transform: rotateY(-10deg);
+}
+.floor.f0 .label, .floor.f0 .plan {
+  z-index: 0;
+}
+
+        /* .col- Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 575px) {
+    
+        }
+
+        /* .col-sm- Small devices (portrait tablets and large phones, 600px and up) */
+        @media only screen and (min-width: 576px) {
+       
+        }
+
+        /* .col-md- Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) {
+       
+        }
+
+        /* .col-lg- Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px) {
+         
+        }
+
+        /* .col-xl- Extra large devices (large laptops and desktops, 1200px and up) */
+        @media only screen and (min-width: 1200px) {
+       
+        }

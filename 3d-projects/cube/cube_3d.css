@@ -1,0 +1,60 @@
+.cube_3d *{
+margin:0;
+padding:0;
+}
+.cube_3d {
+text-align:center;
+background-color:gray;
+position: relative;
+height: 400px;
+}
+.cube_3d .container {
+width:400px;
+height:100%;
+margin:130px auto;
+perspective:800px;
+}
+.cube_3d .box {
+width:400px;
+transform-style:preserve-3d;
+font:60pt impact;
+color:gold;
+animation: turn 3s linear infinite;
+}
+.cube_3d .box div {
+width:400px;
+height:400px;
+position:absolute;
+opacity:.8;
+background-color:#1f122c;
+}
+.cube_3d .front {
+transform:translateZ(200px);
+}
+.cube_3d .back {
+transform:rotateY(180deg) translateZ(200px);
+}
+.cube_3d .left {
+transform:rotateY(-90deg) translateX(-200px);
+transform-origin:left;
+}
+.cube_3d .right {
+transform:rotateY(90deg) translateX(200px);
+transform-origin:right;
+}
+.cube_3d .top {
+transform:rotateX(-90deg) translateY(-200px);
+transform-origin:top;
+}
+.cube_3d .bottom {
+transform:rotateX(90deg) translateY(200px);
+transform-origin:bottom;
+}
+@keyframes turn {
+from {
+transform:rotateY(0deg);
+}
+to {
+transform:rotateY(360deg);
+}
+}

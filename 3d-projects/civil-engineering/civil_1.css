@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.civil_3d_1 {
+  position: relative;
+  height: 500px;
+}
+
+.civil_3d_1 #container {
+  position: absolute;
+ 
+}

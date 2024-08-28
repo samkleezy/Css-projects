@@ -1,0 +1,2608 @@
+/***********************/
+/***********************/
+/************************/
+/* Mixin para crear cubo ( Caras siempre al frente ) */
+/************************/
+/***********************/
+/***********************/
+/**/
+.modern_house *, .modern_house *::after, .modern_house *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  transform-style: preserve-3d;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Generic */
+.modern_house {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #C6C5E1;
+  cursor: pointer;
+  position: relative;
+}
+
+.modern_house .face {
+  position: absolute;
+}
+
+/***************/
+.modern_house .house {
+  position: absolute;
+  width: 36vw;
+  height: 24vw;
+  transform: perspective(20000px) rotateX(75deg) rotateZ(35deg) translateZ(-9vw);
+  transition: transform 0.1s linear;
+}
+
+.modern_house .shadows {
+  width: 100%;
+  height: 100%;
+}
+
+.modern_house .shadow-a {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 130%;
+  height: 103%;
+  transform-origin: top right;
+  transform: skewY(-3deg);
+  background-color: #686688;
+  box-shadow: -1vw 1vw 1.5vw #686688;
+  filter: blur(0.5vw);
+}
+
+.modern_house .shadow-b {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 101.5%;
+  background-color: #5f5d7c;
+}
+
+/***************/
+/***************/
+.modern_house .al {
+  width: 3vw;
+  height: 24vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.modern_house .al__front {
+  width: 30vw;
+  height: 0.4vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(23.6vw);
+}
+.modern_house .al__back {
+  width: 30vw;
+  height: 0.4vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-30vw) translateY(-0.4vw);
+}
+.modern_house .al__right {
+  width: 24vw;
+  height: 0.4vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(30vw) translateX(-24vw) translateY(-0.4vw);
+}
+.modern_house .al__left {
+  width: 24vw;
+  height: 0.4vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-0.4vw);
+}
+.modern_house .al__top {
+  width: 30vw;
+  height: 24vw;
+  transform-origin: top left;
+  transform: translateZ(0.4vw);
+}
+.modern_house .al__bottom {
+  width: 30vw;
+  height: 24vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-30vw);
+}
+.modern_house .al__front {
+  background-image: linear-gradient(to right, #8985ad, #c4c2d6);
+}
+.modern_house .al__back {
+  background-color: #c4c2d6;
+}
+.modern_house .al__right {
+  background-color: #fbfbfb;
+}
+.modern_house .al__left {
+  background-color: #7a76a3;
+}
+.modern_house .al__top {
+  background-image: linear-gradient(to right, #a7a4c2 40%, #e5e5e5, #f2f2f2);
+}
+.modern_house .al__top::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 13vw;
+  height: 7vw;
+  background-image: linear-gradient(-135deg, transparent 20%, rgba(169, 215, 207, 0.75));
+}
+.modern_house .al__top::after {
+  content: "";
+  position: absolute;
+  bottom: 1vw;
+  left: 6vw;
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
+  background-image: radial-gradient(rgba(251, 251, 251, 0.25), transparent);
+  filter: blur(0.7vw);
+}
+.modern_house .al__bottom {
+  background-color: #c4c2d6;
+}
+
+.modern_house .ab {
+  width: 8vw;
+  height: 8vw;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.modern_house .ab__front {
+  width: 8vw;
+  height: 0.4vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(7.6vw);
+}
+.modern_house .ab__back {
+  width: 8vw;
+  height: 0.4vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-8vw) translateY(-0.4vw);
+}
+.modern_house .ab__right {
+  width: 8vw;
+  height: 0.4vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(8vw) translateX(-8vw) translateY(-0.4vw);
+}
+.modern_house .ab__left {
+  width: 8vw;
+  height: 0.4vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-0.4vw);
+}
+.modern_house .ab__top {
+  width: 8vw;
+  height: 8vw;
+  transform-origin: top left;
+  transform: translateZ(0.4vw);
+}
+.modern_house .ab__bottom {
+  width: 8vw;
+  height: 8vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-8vw);
+}
+.modern_house .ab__front {
+  background-color: #c4c2d6;
+}
+.modern_house .ab__back {
+  background-color: #c4c2d6;
+}
+.modern_house .ab__right {
+  background-color: #fbfbfb;
+}
+.modern_house .ab__left {
+  background-color: #fbfbfb;
+}
+.modern_house .ab__top {
+  background-color: #f2f2f2;
+}
+.modern_house .ab__bottom {
+  background-color: #c4c2d6;
+}
+
+.modern_house .at {
+  width: 8vw;
+  height: 4vw;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.modern_house .at__front {
+  width: 8vw;
+  height: 0.4vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(3.6vw);
+}
+.modern_house .at__back {
+  width: 8vw;
+  height: 0.4vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-8vw) translateY(-0.4vw);
+}
+.modern_house .at__right {
+  width: 4vw;
+  height: 0.4vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(8vw) translateX(-4vw) translateY(-0.4vw);
+}
+.modern_house .at__left {
+  width: 4vw;
+  height: 0.4vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-0.4vw);
+}
+.modern_house .at__top {
+  width: 8vw;
+  height: 4vw;
+  transform-origin: top left;
+  transform: translateZ(0.4vw);
+}
+.modern_house .at__bottom {
+  width: 8vw;
+  height: 4vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-8vw);
+}
+.modern_house .at__front {
+  background-color: #c4c2d6;
+}
+.modern_house .at__back {
+  background-color: #c4c2d6;
+}
+.modern_house .at__right {
+  background-color: #fbfbfb;
+}
+.modern_house .at__left {
+  background-color: #fbfbfb;
+}
+.modern_house .at__top {
+  background-color: #f2f2f2;
+}
+.modern_house .at__bottom {
+  background-color: #c4c2d6;
+}
+
+.modern_house .ac {
+  width: 6vw;
+  height: 12vw;
+  position: absolute;
+  right: 0;
+  top: 4vw;
+}
+.modern_house .ac__front {
+  width: 6vw;
+  height: 1vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(11vw);
+}
+.modern_house .ac__back {
+  width: 6vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-6vw) translateY(-1vw);
+}
+.modern_house .ac__right {
+  width: 12vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(6vw) translateX(-12vw) translateY(-1vw);
+}
+.modern_house .ac__left {
+  width: 12vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-1vw);
+}
+.modern_house .ac__top {
+  width: 6vw;
+  height: 12vw;
+  transform-origin: top left;
+  transform: translateZ(1vw);
+}
+.modern_house .ac__bottom {
+  width: 6vw;
+  height: 12vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-6vw);
+}
+.modern_house .ac .face {
+  opacity: 0.9;
+}
+.modern_house .ac__front {
+  background-color: #4d6d98;
+  opacity: 0.75;
+}
+.modern_house .ac__back {
+  background-color: #4d6d98;
+}
+.modern_house .ac__right {
+  background-image: linear-gradient(to top, #6187be, #7095c9);
+}
+.modern_house .ac__left {
+  background-color: #16273c;
+}
+.modern_house .ac__top {
+  opacity: 0.75;
+  background-image: linear-gradient(to right, #7095c9 0, #7095c9 5%, #6187be 20%, #6187be 30%, #7095c9 40%, #7095c9 65%, #658dc5 70%, #658dc5 72%, #7095c9 85%);
+  box-shadow: inset 0.5vw 0.5vw 2vw rgba(251, 251, 251, 0.5);
+}
+.modern_house .ac__top::before {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, transparent 0, transparent 10%, rgba(97, 135, 190, 0.9) 15%, rgba(97, 135, 190, 0.9) 40%, rgba(251, 251, 251, 0.2) 40%, rgba(251, 251, 251, 0.2) 50%, transparent 60%);
+  filter: blur(0.15vw);
+}
+.modern_house .ac__bottom {
+  background-color: #4d6d98;
+}
+.modern_house .ac__bottom::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: -0.25vw 0.25vw 1vw #234062;
+}
+
+/***************/
+/***************/
+.modern_house .bce {
+  width: 17vw;
+  height: 20.5vw;
+  position: absolute;
+  right: 6vw;
+  top: 0;
+  transform: translateZ(0.41vw);
+}
+.modern_house .bce__front {
+  width: 17vw;
+  height: 0.5vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(21.5vw);
+}
+.modern_house .bce__back {
+  width: 17vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-17vw) translateY(-0.5vw);
+}
+.modern_house .bce__right {
+  width: 22vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(17vw) translateX(-22vw) translateY(-0.5vw);
+}
+.modern_house .bce__left {
+  width: 22vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-0.5vw);
+}
+.modern_house .bce__top {
+  width: 17vw;
+  height: 22vw;
+  transform-origin: top left;
+  transform: translateZ(0.5vw);
+}
+.modern_house .bce__bottom {
+  width: 17vw;
+  height: 22vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-17vw);
+}
+.modern_house .bce__front {
+  background-image: linear-gradient(to right, #a7a4c2, #c4c2d6);
+}
+.modern_house .bce__back {
+  background-color: #c4c2d6;
+}
+.modern_house .bce__right {
+  background-color: #f2f2f2;
+}
+.modern_house .bce__left {
+  background-color: #c4c2d6;
+}
+.modern_house .bce__top {
+  background-image: linear-gradient(135deg, #a7a4c2 60%, #f2f2f2);
+}
+.modern_house .bce__bottom {
+  background-color: #c4c2d6;
+}
+.modern_house .bce__bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 101%;
+  background-color: #675D6E;
+  filter: blur(0.35vw);
+}
+
+.modern_house .bci {
+  width: 16vw;
+  height: 21vw;
+  position: absolute;
+  right: 6vw;
+  top: 0;
+  transform: translateZ(0.92vw);
+}
+.modern_house .bci__front {
+  width: 16vw;
+  height: 0.5vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(20.5vw);
+}
+.modern_house .bci__back {
+  width: 16vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-16vw) translateY(-0.5vw);
+}
+.modern_house .bci__right {
+  width: 21vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(16vw) translateX(-21vw) translateY(-0.5vw);
+}
+.modern_house .bci__left {
+  width: 21vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-0.5vw);
+}
+.modern_house .bci__top {
+  width: 16vw;
+  height: 21vw;
+  transform-origin: top left;
+  transform: translateZ(0.5vw);
+}
+.modern_house .bci__bottom {
+  width: 16vw;
+  height: 21vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-16vw);
+}
+.modern_house .bci__front {
+  background-image: linear-gradient(to right, #a7a4c2, #c4c2d6);
+}
+.modern_house .bci__back {
+  background-color: #c4c2d6;
+}
+.modern_house .bci__right {
+  background-color: #f2f2f2;
+}
+.modern_house .bci__left {
+  background-color: #c4c2d6;
+}
+.modern_house .bci__top {
+  background-image: linear-gradient(135deg, #a7a4c2 60%, #f2f2f2);
+}
+.modern_house .bci__top::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 16.4vw;
+  background-color: #d7d6ea;
+}
+.modern_house .bci__top::after {
+  content: "";
+  position: absolute;
+  bottom: 1.5vw;
+  left: 1vw;
+  width: 10vw;
+  height: 3.5vw;
+  border-radius: 50%;
+  background-image: radial-gradient(#badfd9, transparent);
+  filter: blur(0.5vw);
+}
+.modern_house .bci__bottom {
+  background-color: #c4c2d6;
+}
+.modern_house .bci__bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 101%;
+  background-color: #675D6E;
+  filter: blur(0.35vw);
+}
+
+.modern_house .bl {
+  width: 13vw;
+  height: 17vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateZ(0.41vw);
+}
+.modern_house .bl__front {
+  width: 13.1vw;
+  height: 0.5vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(16.5vw);
+}
+.modern_house .bl__back {
+  width: 13.1vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-13.1vw) translateY(-0.5vw);
+}
+.modern_house .bl__right {
+  width: 17vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(13.1vw) translateX(-17vw) translateY(-0.5vw);
+}
+.modern_house .bl__left {
+  width: 17vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-0.5vw);
+}
+.modern_house .bl__top {
+  width: 13.1vw;
+  height: 17vw;
+  transform-origin: top left;
+  transform: translateZ(0.5vw);
+}
+.modern_house .bl__bottom {
+  width: 13.1vw;
+  height: 17vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-13.1vw);
+}
+.modern_house .bl__front {
+  background-image: linear-gradient(to right, #6c6799, #a7a4c2);
+}
+.modern_house .bl__back {
+  background-color: #c4c2d6;
+}
+.modern_house .bl__right {
+  background-color: #f2f2f2;
+}
+.modern_house .bl__left {
+  background-color: #fbfbfb;
+}
+.modern_house .bl__top {
+  background-color: #d7d6ea;
+}
+.modern_house .bl__top::before {
+  content: "";
+  position: absolute;
+  top: 2vw;
+  left: 3.5vw;
+  width: 12vw;
+  height: 12vw;
+  border-radius: 50%;
+  background-color: rgba(222, 245, 241, 0.35);
+  filter: blur(0.95vw);
+}
+.modern_house .bl__bottom {
+  background-color: #c4c2d6;
+}
+.modern_house .bl__bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 102%;
+  background-color: #8985ad;
+  box-shadow: 0vw 0.25vw 1vw #8985ad;
+}
+
+.modern_house .bt {
+  width: 4vw;
+  height: 4vw;
+  position: absolute;
+  right: 2vw;
+  top: 0;
+  transform: translateZ(0.41vw);
+}
+.modern_house .bt__front {
+  width: 4vw;
+  height: 1.1vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(2.9vw);
+}
+.modern_house .bt__back {
+  width: 4vw;
+  height: 1.1vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-4vw) translateY(-1.1vw);
+}
+.modern_house .bt__right {
+  width: 4vw;
+  height: 1.1vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(4vw) translateX(-4vw) translateY(-1.1vw);
+}
+.modern_house .bt__left {
+  width: 4vw;
+  height: 1.1vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-1.1vw);
+}
+.modern_house .bt__top {
+  width: 4vw;
+  height: 4vw;
+  transform-origin: top left;
+  transform: translateZ(1.1vw);
+}
+.modern_house .bt__bottom {
+  width: 4vw;
+  height: 4vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-4vw);
+}
+.modern_house .bt__front {
+  background-image: linear-gradient(to top, #9894b7 50%, #cac8da);
+}
+.modern_house .bt__back {
+  background-color: #c4c2d6;
+}
+.modern_house .bt__right {
+  background-color: #f2f2f2;
+}
+.modern_house .bt__left {
+  background-color: #fbfbfb;
+}
+.modern_house .bt__top {
+  background-color: #e5e5e5;
+}
+.modern_house .bt__bottom {
+  background-color: #c4c2d6;
+}
+
+.modern_house .bbe {
+  width: 6vw;
+  height: 6vw;
+  position: absolute;
+  right: 0;
+  bottom: 2vw;
+  transform: translateZ(0.41vw);
+}
+.modern_house .bbe__front {
+  width: 6vw;
+  height: 0.5vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(5.5vw);
+}
+.modern_house .bbe__back {
+  width: 6vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-6vw) translateY(-0.5vw);
+}
+.modern_house .bbe__right {
+  width: 6vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(6vw) translateX(-6vw) translateY(-0.5vw);
+}
+.modern_house .bbe__left {
+  width: 6vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-0.5vw);
+}
+.modern_house .bbe__top {
+  width: 6vw;
+  height: 6vw;
+  transform-origin: top left;
+  transform: translateZ(0.5vw);
+}
+.modern_house .bbe__bottom {
+  width: 6vw;
+  height: 6vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-6vw);
+}
+.modern_house .bbe__front {
+  background-color: #c4c2d6;
+}
+.modern_house .bbe__back {
+  background-color: #c4c2d6;
+}
+.modern_house .bbe__right {
+  background-color: #f2f2f2;
+}
+.modern_house .bbe__left {
+  background-color: #fbfbfb;
+}
+.modern_house .bbe__top {
+  background-color: #f6f6f6;
+}
+.modern_house .bbe__bottom {
+  background-color: #fbfbfb;
+}
+.modern_house .bbe__bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 95%;
+  height: 104%;
+  background-color: #675D6E;
+  filter: blur(0.35vw);
+}
+
+.modern_house .bbi {
+  width: 4vw;
+  height: 5vw;
+  position: absolute;
+  right: 2vw;
+  bottom: 3vw;
+  transform: translateZ(0.92vw);
+}
+.modern_house .bbi__front {
+  width: 4vw;
+  height: 0.5vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(4.5vw);
+}
+.modern_house .bbi__back {
+  width: 4vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-4vw) translateY(-0.5vw);
+}
+.modern_house .bbi__right {
+  width: 5vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(4vw) translateX(-5vw) translateY(-0.5vw);
+}
+.modern_house .bbi__left {
+  width: 5vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-0.5vw);
+}
+.modern_house .bbi__top {
+  width: 4vw;
+  height: 5vw;
+  transform-origin: top left;
+  transform: translateZ(0.5vw);
+}
+.modern_house .bbi__bottom {
+  width: 4vw;
+  height: 5vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-4vw);
+}
+.modern_house .bbi__front {
+  background-color: #c4c2d6;
+}
+.modern_house .bbi__back {
+  background-color: #c4c2d6;
+}
+.modern_house .bbi__right {
+  background-color: #f2f2f2;
+}
+.modern_house .bbi__left {
+  background-color: #fbfbfb;
+}
+.modern_house .bbi__top {
+  background-color: #ededed;
+}
+.modern_house .bbi__bottom {
+  background-color: #fbfbfb;
+}
+.modern_house .bbi__bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 95%;
+  height: 104%;
+  background-color: #675D6E;
+  filter: blur(0.5vw);
+}
+
+/***************/
+/***************/
+.modern_house .cl {
+  width: 5vw;
+  height: 3vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateZ(0.41vw);
+}
+.modern_house .cl__front {
+  width: 3.5vw;
+  height: 12vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(7vw);
+}
+.modern_house .cl__back {
+  width: 3.5vw;
+  height: 12vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-3.5vw) translateY(-12vw);
+}
+.modern_house .cl__right {
+  width: 19vw;
+  height: 12vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(3.5vw) translateX(-19vw) translateY(-12vw);
+}
+.modern_house .cl__left {
+  width: 19vw;
+  height: 12vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-12vw);
+}
+.modern_house .cl__top {
+  width: 3.5vw;
+  height: 19vw;
+  transform-origin: top left;
+  transform: translateZ(12vw);
+}
+.modern_house .cl__bottom {
+  width: 3.5vw;
+  height: 19vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-3.5vw);
+}
+.modern_house .cl__front {
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(to bottom, #c4c2d6, #9894b7);
+  overflow: hidden;
+}
+.modern_house .cl__front::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1.1vw;
+  width: 200%;
+  height: 3vw;
+  background-image: linear-gradient(to right, rgba(222, 245, 241, 0.3), rgba(196, 194, 214, 0.25));
+  filter: blur(0.175vw);
+  transform: rotateZ(-30deg);
+}
+.modern_house .cl__back {
+  background-color: #c4c2d6;
+}
+.modern_house .cl__right {
+  background-image: linear-gradient(to top, #a7a4c2, #8985ad, #cbe7e3 70%);
+}
+.modern_house .cl__right::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: calc(100% - 2.5vw);
+  height: 100%;
+  background-image: linear-gradient(to bottom, #fbfbfb, #cbe7e3 15%, #d9d9d9 80%, #a7a4c2);
+  filter: blur(0.5vw);
+}
+.modern_house .cl__right .lamp:nth-of-type(1) {
+  left: 25%;
+}
+.modern_house .cl__right .lamp:nth-of-type(2) {
+  left: 50%;
+}
+.modern_house .cl__right .lamp:nth-of-type(3) {
+  left: 75%;
+}
+.modern_house .cl__left {
+  background-image: linear-gradient(to top, #8985ad, #6c6799);
+}
+.modern_house .cl__top {
+  background-color: #b5b3cc;
+}
+.modern_house .cl__bottom {
+  background-color: #c4c2d6;
+}
+.modern_house .cl__bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 115%;
+  height: 103%;
+  background-color: rgba(103, 93, 110, 0.75);
+  filter: blur(0.5vw);
+}
+
+.modern_house .cc {
+  width: 1vw;
+  height: 19vw;
+  position: absolute;
+  left: 15vw;
+  top: 0;
+  transform: translateZ(12.5vw);
+}
+.modern_house .cc__front {
+  width: 1vw;
+  height: 12.5vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(6.5vw);
+}
+.modern_house .cc__back {
+  width: 1vw;
+  height: 12.5vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-1vw) translateY(-12.5vw);
+}
+.modern_house .cc__right {
+  width: 19vw;
+  height: 12.5vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(1vw) translateX(-19vw) translateY(-12.5vw);
+}
+.modern_house .cc__left {
+  width: 19vw;
+  height: 12.5vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-12.5vw);
+}
+.modern_house .cc__top {
+  width: 1vw;
+  height: 19vw;
+  transform-origin: top left;
+  transform: translateZ(12.5vw);
+}
+.modern_house .cc__bottom {
+  width: 1vw;
+  height: 19vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-1vw);
+}
+.modern_house .cc__front {
+  background-image: linear-gradient(to bottom, #b5b3cc, #c4c2d6 10%);
+}
+.modern_house .cc__back {
+  background-color: #c4c2d6;
+}
+.modern_house .cc__right {
+  background-color: #fbfbfb;
+}
+.modern_house .cc__left {
+  background-image: linear-gradient(to top, #8985ad, #6c6799);
+}
+.modern_house .cc__top {
+  background-color: #f2f2f2;
+}
+.modern_house .cc__bottom {
+  background-color: #c4c2d6;
+}
+
+.modern_house .ccl {
+  width: 1vw;
+  height: 3vw;
+  position: absolute;
+  left: 15vw;
+  top: 16vw;
+  transform: translateZ(1.43vw);
+}
+.modern_house .ccl__front {
+  width: 1vw;
+  height: 11.5vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(-8.5vw);
+}
+.modern_house .ccl__back {
+  width: 1vw;
+  height: 11.5vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-1vw) translateY(-11.5vw);
+}
+.modern_house .ccl__right {
+  width: 3vw;
+  height: 11.5vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(1vw) translateX(-3vw) translateY(-11.5vw);
+}
+.modern_house .ccl__left {
+  width: 3vw;
+  height: 11.5vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-11.5vw);
+}
+.modern_house .ccl__top {
+  width: 1vw;
+  height: 3vw;
+  transform-origin: top left;
+  transform: translateZ(11.5vw);
+}
+.modern_house .ccl__bottom {
+  width: 1vw;
+  height: 3vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-1vw);
+}
+.modern_house .ccl__front {
+  background-image: linear-gradient(to top, #a7a4c2, #c4c2d6);
+}
+.modern_house .ccl__back {
+  background-color: #c4c2d6;
+}
+.modern_house .ccl__right {
+  background-image: linear-gradient(to bottom, #6c6799, #8985ad 70%, #badfd9);
+}
+.modern_house .ccl__right::before {
+  content: "";
+  position: absolute;
+  top: -0.5vw;
+  left: 0;
+  width: 100%;
+  height: 2vw;
+  transform-origin: bottom left;
+  transform: translateZ(0.05vw);
+  background-image: linear-gradient(-45deg, #8985ad, #6c6799 80%, transparent 80%);
+}
+.modern_house .ccl__left {
+  background-image: linear-gradient(to top, #8985ad, #6c6799);
+}
+.modern_house .ccl__top {
+  background-color: #f2f2f2;
+}
+.modern_house .ccl__bottom {
+  background-color: #c4c2d6;
+}
+.modern_house .ccl__bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 102%;
+  height: 101%;
+  background-color: #675D6E;
+  filter: blur(0.35vw);
+}
+
+.modern_house .cml {
+  width: 16vw;
+  height: 19vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateZ(12.41vw);
+}
+.modern_house .cml__front {
+  width: 16vw;
+  height: 1vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(18vw);
+}
+.modern_house .cml__back {
+  width: 16vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-16vw) translateY(-1vw);
+}
+.modern_house .cml__right {
+  width: 19vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(16vw) translateX(-19vw) translateY(-1vw);
+}
+.modern_house .cml__left {
+  width: 19vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-1vw);
+}
+.modern_house .cml__top {
+  width: 16vw;
+  height: 19vw;
+  transform-origin: top left;
+  transform: translateZ(1vw);
+}
+.modern_house .cml__bottom {
+  width: 16vw;
+  height: 19vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-16vw);
+}
+.modern_house .cml__front {
+  background-image: linear-gradient(to bottom, #bbb9d0, #c4c2d6);
+}
+.modern_house .cml__back {
+  background-color: #c4c2d6;
+}
+.modern_house .cml__right {
+  background-color: #fbfbfb;
+}
+.modern_house .cml__left {
+  background-color: #6c6799;
+}
+.modern_house .cml__top {
+  background-image: linear-gradient(to right, #8985ad, #a7a4c2 30%, #97cfc6);
+  box-shadow: inset 0.3vw 0.3vw 2vw rgba(103, 93, 110, 0.1), inset -0.3vw 0.3vw 2vw rgba(103, 93, 110, 0.1), inset 0.3vw -0.3vw 2vw rgba(103, 93, 110, 0.1), inset -0.3vw -0.3vw 2vw rgba(103, 93, 110, 0.1);
+}
+.modern_house .cml__bottom {
+  background-color: #c4c2d6;
+}
+
+.modern_house .cmr {
+  width: 16vw;
+  height: 18vw;
+  position: absolute;
+  left: 16vw;
+  top: 0;
+  transform: translateZ(12.41vw);
+}
+.modern_house .cmr__front {
+  width: 16vw;
+  height: 1vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(17vw);
+}
+.modern_house .cmr__back {
+  width: 16vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-16vw) translateY(-1vw);
+}
+.modern_house .cmr__right {
+  width: 18vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(16vw) translateX(-18vw) translateY(-1vw);
+}
+.modern_house .cmr__left {
+  width: 18vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-1vw);
+}
+.modern_house .cmr__top {
+  width: 16vw;
+  height: 18vw;
+  transform-origin: top left;
+  transform: translateZ(1vw);
+}
+.modern_house .cmr__bottom {
+  width: 16vw;
+  height: 18vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-16vw);
+}
+.modern_house .cmr__front {
+  background-image: linear-gradient(to bottom, #b5b3cc, #c4c2d6);
+}
+.modern_house .cmr__back {
+  background-color: #c4c2d6;
+}
+.modern_house .cmr__right {
+  background-color: #fbfbfb;
+}
+.modern_house .cmr__left {
+  background-color: #c4c2d6;
+}
+.modern_house .cmr__top {
+  background-image: linear-gradient(to right, #f2f2f2, #ededed);
+}
+.modern_house .cmr__top::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(48.5deg, #f7f7f7 50%, transparent 50%);
+  opacity: 0.35;
+}
+.modern_house .cmr__bottom {
+  background-color: #c4c2d6;
+}
+
+.modern_house .cmt {
+  width: 12vw;
+  height: 19vw;
+  position: absolute;
+  left: 3vw;
+  top: 0;
+  transform: translateZ(24vw);
+}
+.modern_house .cmt__front {
+  width: 12vw;
+  height: 1vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(18vw);
+}
+.modern_house .cmt__back {
+  width: 12vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-12vw) translateY(-1vw);
+}
+.modern_house .cmt__right {
+  width: 19vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(12vw) translateX(-19vw) translateY(-1vw);
+}
+.modern_house .cmt__left {
+  width: 19vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-1vw);
+}
+.modern_house .cmt__top {
+  width: 12vw;
+  height: 19vw;
+  transform-origin: top left;
+  transform: translateZ(1vw);
+}
+.modern_house .cmt__bottom {
+  width: 12vw;
+  height: 19vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-12vw);
+}
+.modern_house .cmt__front {
+  background-image: linear-gradient(to bottom, #b5b3cc, #c4c2d6);
+}
+.modern_house .cmt__back {
+  background-color: #c4c2d6;
+}
+.modern_house .cmt__right {
+  background-color: #fbfbfb;
+}
+.modern_house .cmt__left {
+  background-color: #a7a4c2;
+}
+.modern_house .cmt__top {
+  background-color: #f2f2f2;
+}
+.modern_house .cmt__bottom {
+  background-color: #c4c2d6;
+}
+
+/***************/
+/***************/
+.modern_house .dl {
+  width: 2vw;
+  height: 1vw;
+  position: absolute;
+  left: 21.9vw;
+  bottom: 7vw;
+  transform: translateZ(1.5vw);
+}
+.modern_house .dl__front {
+  width: 2vw;
+  height: 11vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(-10vw);
+}
+.modern_house .dl__back {
+  width: 2vw;
+  height: 11vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-2vw) translateY(-11vw);
+}
+.modern_house .dl__right {
+  width: 1vw;
+  height: 11vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(2vw) translateX(-1vw) translateY(-11vw);
+}
+.modern_house .dl__left {
+  width: 1vw;
+  height: 11vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-11vw);
+}
+.modern_house .dl__top {
+  width: 2vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: translateZ(11vw);
+}
+.modern_house .dl__bottom {
+  width: 2vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-2vw);
+}
+.modern_house .dl__front {
+  background-image: linear-gradient(to bottom, #8985ad, #9894b7 35%, #a7a4c2 72%, #badfd9);
+}
+.modern_house .dl__back {
+  background-color: #c4c2d6;
+}
+.modern_house .dl__right {
+  background-color: #c4c2d6;
+}
+.modern_house .dl__left {
+  background-color: #9894b7;
+}
+.modern_house .dl__top {
+  background-color: #f2f2f2;
+}
+.modern_house .dl__bottom {
+  background-color: #c4c2d6;
+}
+.modern_house .dl__bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 102%;
+  height: 101%;
+  background-color: #675D6E;
+  filter: blur(0.35vw);
+}
+
+.modern_house .dm {
+  width: 6vw;
+  height: 1vw;
+  position: absolute;
+  left: 16vw;
+  bottom: 7vw;
+  transform: translateZ(8.5vw);
+}
+.modern_house .dm__front {
+  width: 6vw;
+  height: 4vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(-3vw);
+}
+.modern_house .dm__back {
+  width: 6vw;
+  height: 4vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-6vw) translateY(-4vw);
+}
+.modern_house .dm__right {
+  width: 1vw;
+  height: 4vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(6vw) translateX(-1vw) translateY(-4vw);
+}
+.modern_house .dm__left {
+  width: 1vw;
+  height: 4vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-4vw);
+}
+.modern_house .dm__top {
+  width: 6vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: translateZ(4vw);
+}
+.modern_house .dm__bottom {
+  width: 6vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-6vw);
+}
+.modern_house .dm__front {
+  background-image: linear-gradient(to bottom, #8985ad, #9894b7);
+}
+.modern_house .dm__back {
+  background-color: #c4c2d6;
+}
+.modern_house .dm__right {
+  background-color: #fbfbfb;
+}
+.modern_house .dm__left {
+  background-color: #c4c2d6;
+}
+.modern_house .dm__top {
+  background-color: #f2f2f2;
+}
+.modern_house .dm__bottom {
+  background-color: #c4c2d6;
+}
+
+.modern_house .dt {
+  width: 8vw;
+  height: 1vw;
+  position: absolute;
+  left: 14vw;
+  top: 0;
+  transform: translateZ(1.5vw);
+}
+.modern_house .dt__front {
+  width: 8vw;
+  height: 11vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(-10vw);
+}
+.modern_house .dt__back {
+  width: 8vw;
+  height: 11vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-8vw) translateY(-11vw);
+}
+.modern_house .dt__right {
+  width: 1vw;
+  height: 11vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(8vw) translateX(-1vw) translateY(-11vw);
+}
+.modern_house .dt__left {
+  width: 1vw;
+  height: 11vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-11vw);
+}
+.modern_house .dt__top {
+  width: 8vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: translateZ(11vw);
+}
+.modern_house .dt__bottom {
+  width: 8vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-8vw);
+}
+.modern_house .dt__front {
+  background-color: #f2f2f2;
+}
+.modern_house .dt__back {
+  background-color: #c4c2d6;
+}
+.modern_house .dt__right {
+  background-color: #fbfbfb;
+}
+.modern_house .dt__left {
+  background-color: #f2f2f2;
+}
+.modern_house .dt__top {
+  background-color: #f2f2f2;
+}
+.modern_house .dt__bottom {
+  background-color: #c4c2d6;
+}
+
+/***************/
+/***************/
+.modern_house .el {
+  width: 11.4vw;
+  height: 1vw;
+  position: absolute;
+  left: 3.5vw;
+  bottom: 7vw;
+  transform: translateZ(1vw);
+}
+.modern_house .el__front {
+  width: 11.4vw;
+  height: 11.5vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(-11vw);
+}
+.modern_house .el__back {
+  width: 11.4vw;
+  height: 11.5vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-11.4vw) translateY(-11.5vw);
+}
+.modern_house .el__right {
+  width: 0.5vw;
+  height: 11.5vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(11.4vw) translateX(-0.5vw) translateY(-11.5vw);
+}
+.modern_house .el__left {
+  width: 0.5vw;
+  height: 11.5vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-11.5vw);
+}
+.modern_house .el__top {
+  width: 11.4vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: translateZ(11.5vw);
+}
+.modern_house .el__bottom {
+  width: 11.4vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-11.4vw);
+}
+.modern_house .el__front {
+  border: 0.1vw solid rgba(77, 109, 152, 0.5);
+  overflow: hidden;
+  background-image: repeating-linear-gradient(-45deg, rgba(97, 135, 190, 0.1) 1vw, rgba(112, 149, 201, 0.1) 1.5vw);
+}
+
+.modern_house .ec {
+  width: 14vw;
+  height: 1vw;
+  position: absolute;
+  left: 16vw;
+  bottom: 7vw;
+  transform: translateZ(1.5vw);
+}
+.modern_house .ec__front {
+  width: 14vw;
+  height: 11vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(-10.5vw);
+}
+.modern_house .ec__back {
+  width: 14vw;
+  height: 11vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-14vw) translateY(-11vw);
+}
+.modern_house .ec__right {
+  width: 0.5vw;
+  height: 11vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(14vw) translateX(-0.5vw) translateY(-11vw);
+}
+.modern_house .ec__left {
+  width: 0.5vw;
+  height: 11vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-11vw);
+}
+.modern_house .ec__top {
+  width: 14vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: translateZ(11vw);
+}
+.modern_house .ec__bottom {
+  width: 14vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-14vw);
+}
+.modern_house .ec__front {
+  border: 0.1vw solid rgba(77, 109, 152, 0.5);
+  overflow: hidden;
+  background-image: linear-gradient(to right, rgba(97, 135, 190, 0.1), rgba(112, 149, 201, 0.1));
+}
+
+.modern_house .er {
+  width: 14vw;
+  height: 1vw;
+  position: absolute;
+  left: 29.8vw;
+  top: 0;
+  transform: translateZ(1.5vw);
+}
+.modern_house .er__front {
+  width: 0.1vw;
+  height: 11vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(5.6vw);
+}
+.modern_house .er__back {
+  width: 0.1vw;
+  height: 11vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-0.1vw) translateY(-11vw);
+}
+.modern_house .er__right {
+  width: 16.6vw;
+  height: 11vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(0.1vw) translateX(-16.6vw) translateY(-11vw);
+}
+.modern_house .er__left {
+  width: 16.6vw;
+  height: 11vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-11vw);
+}
+.modern_house .er__top {
+  width: 0.1vw;
+  height: 16.6vw;
+  transform-origin: top left;
+  transform: translateZ(11vw);
+}
+.modern_house .er__bottom {
+  width: 0.1vw;
+  height: 16.6vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-0.1vw);
+}
+.modern_house .er__right {
+  border: 0.1vw solid rgba(77, 109, 152, 0.5);
+  overflow: hidden;
+  background-image: linear-gradient(to right, rgba(97, 135, 190, 0.1), rgba(112, 149, 201, 0.1));
+}
+
+.modern_house .eb {
+  width: 26.4vw;
+  height: 1vw;
+  position: absolute;
+  left: 3.5vw;
+  top: 0;
+  transform: translateZ(1vw);
+}
+.modern_house .eb__front {
+  width: 26.4vw;
+  height: 11.4vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(-10.9vw);
+}
+.modern_house .eb__back {
+  width: 26.4vw;
+  height: 11.4vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-26.4vw) translateY(-11.4vw);
+}
+.modern_house .eb__right {
+  width: 0.5vw;
+  height: 11.4vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(26.4vw) translateX(-0.5vw) translateY(-11.4vw);
+}
+.modern_house .eb__left {
+  width: 0.5vw;
+  height: 11.4vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-11.4vw);
+}
+.modern_house .eb__top {
+  width: 26.4vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: translateZ(11.4vw);
+}
+.modern_house .eb__bottom {
+  width: 26.4vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-26.4vw);
+}
+.modern_house .eb__back {
+  border: 0.1vw solid rgba(77, 109, 152, 0.5);
+  overflow: hidden;
+  background-image: linear-gradient(to right, rgba(97, 135, 190, 0.1), rgba(112, 149, 201, 0.1));
+}
+
+/***************/
+/***************/
+.modern_house .fl {
+  width: 1vw;
+  height: 8.45vw;
+  position: absolute;
+  left: 1.5vw;
+  top: 1vw;
+  transform: translateZ(16.75vw);
+}
+.modern_house .fl__front {
+  width: 0.25vw;
+  height: 0.25vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(16.65vw);
+}
+.modern_house .fl__back {
+  width: 0.25vw;
+  height: 0.25vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-0.25vw) translateY(-0.25vw);
+}
+.modern_house .fl__right {
+  width: 16.9vw;
+  height: 0.25vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(0.25vw) translateX(-16.9vw) translateY(-0.25vw);
+}
+.modern_house .fl__left {
+  width: 16.9vw;
+  height: 0.25vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-0.25vw);
+}
+.modern_house .fl__top {
+  width: 0.25vw;
+  height: 16.9vw;
+  transform-origin: top left;
+  transform: translateZ(0.25vw);
+}
+.modern_house .fl__bottom {
+  width: 0.25vw;
+  height: 16.9vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-0.25vw);
+}
+.fl__front {
+  background-color: #a7a4c2;
+}
+.modern_house .fl__back {
+  background-color: #c4c2d6;
+}
+.modern_house .fl__right {
+  background-image: linear-gradient(to bottom, #a7a4c2, #9591b5 50%);
+}
+.modern_house .fl__left {
+  background-color: #8985ad;
+}
+.modern_house .fl__left::before {
+  content: "";
+  position: absolute;
+  top: 0.25vw;
+  right: 0;
+  width: 100%;
+  height: 3.25vw;
+  border: 0.1vw solid rgba(77, 109, 152, 0.5);
+}
+.modern_house .fl__top {
+  background-image: linear-gradient(to bottom, #a7a4c2, #e5e5e5);
+}
+.modern_house .fl__bottom {
+  background-color: #c4c2d6;
+}
+
+.modern_house .fb,
+.modern_house .ft {
+  width: 5vw;
+  height: 0.25vw;
+  position: absolute;
+  left: 1.5vw;
+  bottom: 6.1vw;
+  transform: translateZ(16.75vw);
+}
+.modern_house .fb__front,
+.modern_house .ft__front {
+  width: 14vw;
+  height: 0.25vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(0vw);
+}
+.modern_house .fb__back,
+.modern_house .ft__back {
+  width: 14vw;
+  height: 0.25vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-14vw) translateY(-0.25vw);
+}
+.modern_house .fb__right,
+.modern_house .ft__right {
+  width: 0.25vw;
+  height: 0.25vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(14vw) translateX(-0.25vw) translateY(-0.25vw);
+}
+.modern_house .fb__left,
+.modern_house .ft__left {
+  width: 0.25vw;
+  height: 0.25vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-0.25vw);
+}
+.modern_house .fb__top,
+.modern_house .ft__top {
+  width: 14vw;
+  height: 0.25vw;
+  transform-origin: top left;
+  transform: translateZ(0.25vw);
+}
+.modern_house .fb__bottom,
+.modern_house .ft__bottom {
+  width: 14vw;
+  height: 0.25vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-14vw);
+}
+.modern_house .fb__front,
+.modern_house .ft__front {
+  background-color: #a7a4c2;
+}
+.modern_house .fb__front::before,
+.modern_house .ft__front::before {
+  content: "";
+  position: absolute;
+  top: 0.25vw;
+  left: 0.1vw;
+  width: calc(100% - .25vw);
+  height: 3.25vw;
+  border: 0.1vw solid rgba(77, 109, 152, 0.5);
+  background-image: linear-gradient(to right, rgba(97, 135, 190, 0.15), rgba(112, 149, 201, 0.15));
+}
+.modern_house .fb__back,
+.modern_house .ft__back {
+  background-color: #c4c2d6;
+}
+.modern_house .fb__right,
+.modern_house .ft__right {
+  background-color: #fbfbfb;
+}
+.modern_house .fb__left,
+.modern_house .ft__left {
+  background-color: #c4c2d6;
+}
+.modern_house .fb__top,
+.modern_house .ft__top {
+  background-image: linear-gradient(to bottom, #97cfc6, #e5e5e5);
+}
+.modern_house .fb__bottom,
+.modern_house .ft__bottom {
+  background-color: #c4c2d6;
+}
+
+.modern_house .ft {
+  top: 1vw;
+}
+
+/***************/
+/***************/
+.modern_house .table {
+  width: 3vw;
+  height: 5vw;
+  right: 10.5vw;
+  bottom: 13vw;
+  position: absolute;
+  transform: translateZ(2.25vw);
+}
+.modern_house .table__front {
+  width: 3vw;
+  height: 0.25vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(4.75vw);
+}
+.modern_house .table__back {
+  width: 3vw;
+  height: 0.25vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-3vw) translateY(-0.25vw);
+}
+.modern_house .table__right {
+  width: 5vw;
+  height: 0.25vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(3vw) translateX(-5vw) translateY(-0.25vw);
+}
+.modern_house .table__left {
+  width: 5vw;
+  height: 0.25vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-0.25vw);
+}
+.modern_house .table__top {
+  width: 3vw;
+  height: 5vw;
+  transform-origin: top left;
+  transform: translateZ(0.25vw);
+}
+.modern_house .table__bottom {
+  width: 3vw;
+  height: 5vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-3vw);
+}
+.modern_house .table__front {
+  background-color: #cdcbdc;
+}
+.modern_house .table__back {
+  background-color: #c4c2d6;
+}
+.modern_house .table__right {
+  background-color: #fbfbfb;
+}
+.modern_house .table__left {
+  background-color: #c4c2d6;
+}
+.modern_house .table__top {
+  background-color: #eaeaea;
+}
+.modern_house .table__bottom {
+  background-color: #c4c2d6;
+}
+.modern_house .table::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  top: -10%;
+  width: 120%;
+  height: 120%;
+  background-color: #b5b3cc;
+  filter: blur(0.5vw);
+  transform: translateZ(-0.81vw);
+}
+
+.modern_house .foot {
+  width: 0.25vw;
+  height: 0.25vw;
+  position: absolute;
+}
+.modern_house .foot__front {
+  width: 0.25vw;
+  height: 1vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(-0.75vw);
+}
+.modern_house .foot__back {
+  width: 0.25vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-0.25vw) translateY(-1vw);
+}
+.modern_house .foot__right {
+  width: 0.25vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(0.25vw) translateX(-0.25vw) translateY(-1vw);
+}
+.modern_house .foot__left {
+  width: 0.25vw;
+  height: 1vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-1vw);
+}
+.modern_house .foot__top {
+  width: 0.25vw;
+  height: 0.25vw;
+  transform-origin: top left;
+  transform: translateZ(1vw);
+}
+.modern_house .foot__bottom {
+  width: 0.25vw;
+  height: 0.25vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-0.25vw);
+}
+.modern_house .foot__front {
+  background-color: #cdcbdc;
+}
+.modern_house .foot__back {
+  background-color: #f2f2f2;
+}
+.modern_house .foot__right {
+  background-color: #c4c2d6;
+}
+.modern_house .foot__left {
+  background-color: #f2f2f2;
+}
+.modern_house .foot__top {
+  background-color: #c4c2d6;
+}
+.modern_house .foot__bottom {
+  background-color: #c4c2d6;
+}
+.modern_house .foot:nth-of-type(1) {
+  bottom: 0;
+  right: 0;
+}
+.modern_house .foot:nth-of-type(2) {
+  bottom: 0;
+  left: 0;
+}
+.modern_house .foot:nth-of-type(3) {
+  top: 0;
+  right: 0;
+}
+.modern_house .foot:nth-of-type(4) {
+  top: 0;
+  left: 0;
+}
+
+/***************/
+/***************/
+.modern_house .lamp {
+  position: absolute;
+  top: 2.5vw;
+  width: 0.75vw;
+  height: 2.5vw;
+  border-radius: 5vw;
+  opacity: 0.95;
+  background-color: #def5f1;
+  box-shadow: 0.15vw 0.15vw 0.75vw rgba(186, 223, 217, 0.5), 0.15vw -0.15vw 0.75vw rgba(186, 223, 217, 0.5), -0.15vw 0.15vw 0.75vw rgba(186, 223, 217, 0.5), -0.15vw -0.15vw 0.75vw rgba(186, 223, 217, 0.5);
+  filter: blur(0.15vw);
+}
+
+/***************/
+/***************/
+.modern_house .kitchen {
+  width: 2vw;
+  height: 12vw;
+  top: 3vw;
+  left: 3.5vw;
+  transform: translateZ(3vw);
+  position: absolute;
+}
+.modern_house .kitchen__front {
+  width: 2vw;
+  height: 0.25vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(11.75vw);
+}
+.modern_house .kitchen__back {
+  width: 2vw;
+  height: 0.25vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-2vw) translateY(-0.25vw);
+}
+.modern_house .kitchen__right {
+  width: 12vw;
+  height: 0.25vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(2vw) translateX(-12vw) translateY(-0.25vw);
+}
+.modern_house .kitchen__left {
+  width: 12vw;
+  height: 0.25vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-0.25vw);
+}
+.modern_house .kitchen__top {
+  width: 2vw;
+  height: 12vw;
+  transform-origin: top left;
+  transform: translateZ(0.25vw);
+}
+.modern_house .kitchen__bottom {
+  width: 2vw;
+  height: 12vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-2vw);
+}
+.modern_house .kitchen__front {
+  background-color: #a7a4c2;
+}
+.modern_house .kitchen__back {
+  background-color: #c4c2d6;
+}
+.modern_house .kitchen__right {
+  background-color: #fbfbfb;
+}
+.modern_house .kitchen__left {
+  background-color: #c4c2d6;
+}
+.modern_house .kitchen__left::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0.25vw;
+  height: 1.25vw;
+  background-color: rgba(154, 144, 161, 0.75);
+  filter: blur(0.5vw);
+}
+.modern_house .kitchen__top {
+  background-image: linear-gradient(to right, #eaf9f6, #f2fbf9 60%);
+}
+.modern_house .kitchen__bottom {
+  background-color: #c4c2d6;
+}
+
+/***************/
+/***************/
+.modern_house .couch {
+  width: 5vw;
+  height: 3vw;
+  top: 0.5vw;
+  left: 16vw;
+  transform: translateZ(1.5vw);
+  position: absolute;
+}
+.modern_house .couch__front {
+  width: 5vw;
+  height: 2vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(1vw);
+}
+.modern_house .couch__back {
+  width: 5vw;
+  height: 2vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-5vw) translateY(-2vw);
+}
+.modern_house .couch__right {
+  width: 3vw;
+  height: 2vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(5vw) translateX(-3vw) translateY(-2vw);
+}
+.modern_house .couch__left {
+  width: 3vw;
+  height: 2vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-2vw);
+}
+.modern_house .couch__top {
+  width: 5vw;
+  height: 3vw;
+  transform-origin: top left;
+  transform: translateZ(2vw);
+}
+.modern_house .couch__bottom {
+  width: 5vw;
+  height: 3vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-5vw);
+}
+.modern_house .couch__front {
+  background-color: #d6d4e2;
+}
+.modern_house .couch__back {
+  background-color: #c4c2d6;
+}
+.modern_house .couch__right {
+  background-color: #fbfbfb;
+}
+.modern_house .couch__left {
+  background-color: #c4c2d6;
+}
+.modern_house .couch__top {
+  background-color: #eaeaea;
+}
+.modern_house .couch__bottom {
+  background-color: #c4c2d6;
+}
+.modern_house .couch__bottom::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  top: -10%;
+  width: 120%;
+  height: 120%;
+  background-color: rgba(167, 164, 194, 0.5);
+  filter: blur(0.25vw);
+}
+
+.modern_house .couchb {
+  width: 7vw;
+  height: 1vw;
+  bottom: 17vw;
+  left: 6vw;
+  transform: translateZ(1vw);
+  position: absolute;
+}
+.modern_house .couchb__front {
+  width: 7vw;
+  height: 0.75vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(4.25vw);
+}
+.modern_house .couchb__back {
+  width: 7vw;
+  height: 0.75vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-7vw) translateY(-0.75vw);
+}
+.modern_house .couchb__right {
+  width: 5vw;
+  height: 0.75vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(7vw) translateX(-5vw) translateY(-0.75vw);
+}
+.modern_house .couchb__left {
+  width: 5vw;
+  height: 0.75vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-0.75vw);
+}
+.modern_house .couchb__top {
+  width: 7vw;
+  height: 5vw;
+  transform-origin: top left;
+  transform: translateZ(0.75vw);
+}
+.modern_house .couchb__bottom {
+  width: 7vw;
+  height: 5vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-7vw);
+}
+.modern_house .couchb__front {
+  background-color: #d6d4e2;
+}
+.modern_house .couchb__back {
+  background-color: #c4c2d6;
+}
+.modern_house .couchb__right {
+  background-color: #fbfbfb;
+}
+.modern_house .couchb__left {
+  background-color: #c4c2d6;
+}
+.modern_house .couchb__top {
+  background-image: linear-gradient(to right, #eaf9f6, #f2fbf9 60%);
+}
+.modern_house .couchb__bottom {
+  background-color: #c4c2d6;
+}
+.modern_house .couchb__bottom::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  top: -10%;
+  width: 120%;
+  height: 120%;
+  background-color: rgba(167, 164, 194, 0.5);
+  filter: blur(0.25vw);
+}
+
+.modern_house .couchc,
+.modern_house .couchd {
+  width: 5vw;
+  height: 1.5vw;
+  bottom: 6.5vw;
+  left: 9vw;
+  transform: translateZ(13.5vw);
+  position: absolute;
+}
+.modern_house .couchc__front,
+.modern_house .couchd__front {
+  width: 5vw;
+  height: 1.5vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(0vw);
+}
+.modern_house .couchc__back,
+.modern_house .couchd__back {
+  width: 5vw;
+  height: 1.5vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-5vw) translateY(-1.5vw);
+}
+.modern_house .couchc__right,
+.modern_house .couchd__right {
+  width: 1.5vw;
+  height: 1.5vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(5vw) translateX(-1.5vw) translateY(-1.5vw);
+}
+.modern_house .couchc__left,
+.modern_house .couchd__left {
+  width: 1.5vw;
+  height: 1.5vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-1.5vw);
+}
+.modern_house .couchc__top,
+.modern_house .couchd__top {
+  width: 5vw;
+  height: 1.5vw;
+  transform-origin: top left;
+  transform: translateZ(1.5vw);
+}
+.modern_house .couchc__bottom,
+.modern_house .couchd__bottom {
+  width: 5vw;
+  height: 1.5vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-5vw);
+}
+.modern_house .couchc__front,
+.modern_house .couchd__front {
+  background-color: #c4c2d6;
+}
+.modern_house .couchc__back,
+.modern_house .couchd__back {
+  background-color: #c4c2d6;
+}
+.modern_house .couchc__right,
+.modern_house .couchd__right {
+  background-image: linear-gradient(to bottom, #caefe9, #def5f1, #f2f2f2);
+}
+.modern_house .couchc__left,
+.modern_house .couchd__left {
+  background-color: #9894b7;
+}
+.modern_house .couchc__top,
+.modern_house .couchd__top {
+  background-image: linear-gradient(to left, #caefe9, #def5f1, #f2f2f2);
+}
+.couchc__bottom,
+.couchd__bottom {
+  background-color: #c4c2d6;
+}
+.modern_house .couchc__bottom::before,
+.modern_house .couchd__bottom::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  top: -10%;
+  width: 120%;
+  height: 120%;
+  background-color: rgba(108, 103, 153, 0.5);
+  filter: blur(0.25vw);
+}
+
+.modern_house .couchd {
+  top: 1.5vw;
+}
+
+/***************/
+/***************/
+.modern_house .picture {
+  width: 0.5vw;
+  height: 3vw;
+  bottom: 14vw;
+  left: 3.35vw;
+  transform: translateZ(6vw);
+  position: absolute;
+}
+.modern_house .picture__front {
+  width: 0.35vw;
+  height: 4vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(-1vw);
+}
+.modern_house .picture__back {
+  width: 0.35vw;
+  height: 4vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-0.35vw) translateY(-4vw);
+}
+.modern_house .picture__right {
+  width: 3vw;
+  height: 4vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(0.35vw) translateX(-3vw) translateY(-4vw);
+}
+.modern_house .picture__left {
+  width: 3vw;
+  height: 4vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-4vw);
+}
+.modern_house .picture__top {
+  width: 0.35vw;
+  height: 3vw;
+  transform-origin: top left;
+  transform: translateZ(4vw);
+}
+.modern_house .picture__bottom {
+  width: 0.35vw;
+  height: 3vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-0.35vw);
+}
+.modern_house .picture__front {
+  background-color: #c4c2d6;
+}
+.modern_house .picture__back {
+  background-color: #c4c2d6;
+}
+.modern_house .picture__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #def5f1, #fbfbfb);
+}
+.modern_house .picture__right::before, .picture__right::after {
+  content: "";
+  position: absolute;
+  width: 1.1vw;
+  height: 1.1vw;
+  border: 0.125vw solid rgba(196, 194, 214, 0.5);
+}
+.modern_house .picture__right::before {
+  top: 40%;
+  left: 25%;
+}
+.modern_house .picture__right::after {
+  top: 55%;
+  left: 45%;
+}
+.modern_house .picture__left {
+  background-color: #c4c2d6;
+}
+.modern_house .picture__top {
+  background-color: #eaeaea;
+}
+.modern_house .picture__bottom {
+  background-color: #c4c2d6;
+}
+
+/***************/
+/***************/
+.modern_house .door-l {
+  width: 0.125vw;
+  height: 1vw;
+  left: 17vw;
+  bottom: 6.75vw;
+  transform: translateZ(1.5vw);
+  position: absolute;
+}
+.modern_house .door-l__front {
+  width: 0.125vw;
+  height: 7vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(-6.5vw);
+}
+.modern_house .door-l__back {
+  width: 0.125vw;
+  height: 7vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-0.125vw) translateY(-7vw);
+}
+.modern_house .door-l__right {
+  width: 0.5vw;
+  height: 7vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(0.125vw) translateX(-0.5vw) translateY(-7vw);
+}
+.modern_house .door-l__left {
+  width: 0.5vw;
+  height: 7vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-7vw);
+}
+.modern_house .door-l__top {
+  width: 0.125vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: translateZ(7vw);
+}
+.modern_house .door-l__bottom {
+  width: 0.125vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-0.125vw);
+}
+.modern_house .door-l__front {
+  background-color: #413e5c;
+}
+.modern_house .door-l__back {
+  background-color: #716d9d;
+}
+.modern_house .door-l__right {
+  background-color: #716d9d;
+}
+.modern_house .door-l__left {
+  background-color: #413e5c;
+}
+.modern_house .door-l__top {
+  background-color: #716d9d;
+}
+.modern_house .door-l__bottom {
+  background-color: #716d9d;
+}
+
+.modern_house .door-r {
+  width: 2vw;
+  height: 1vw;
+  left: 20vw;
+  bottom: 6.75vw;
+  transform: translateZ(1.5vw);
+  position: absolute;
+}
+.modern_house .door-r__front {
+  width: 2vw;
+  height: 7vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(-6.5vw);
+}
+.modern_house .door-r__back {
+  width: 2vw;
+  height: 7vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-2vw) translateY(-7vw);
+}
+.modern_house .door-r__right {
+  width: 0.5vw;
+  height: 7vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(2vw) translateX(-0.5vw) translateY(-7vw);
+}
+.modern_house .door-r__left {
+  width: 0.5vw;
+  height: 7vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-7vw);
+}
+.modern_house .door-r__top {
+  width: 2vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: translateZ(7vw);
+}
+.modern_house .door-r__bottom {
+  width: 2vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-2vw);
+}
+.modern_house .door-r__front {
+  background-color: #413e5c;
+}
+.modern_house .door-r__back {
+  background-color: #716d9d;
+}
+.modern_house .door-r__right {
+  background-color: #716d9d;
+}
+.modern_house .door-r__left {
+  background-color: #413e5c;
+}
+.modern_house .door-r__top {
+  background-color: #716d9d;
+}
+.modern_house .door-r__bottom {
+  background-color: #716d9d;
+}
+
+.modern_house .door-b,
+.modern_house .door-t {
+  width: 2vw;
+  height: 1vw;
+  left: 16vw;
+  bottom: 6.75vw;
+  transform: translateZ(1.5vw);
+  position: absolute;
+}
+.modern_house .door-b__front,
+.modern_house .door-t__front {
+  width: 6vw;
+  height: 0.125vw;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(0.375vw);
+}
+.modern_house .door-b__back,
+.modern_house .door-t__back {
+  width: 6vw;
+  height: 0.125vw;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-6vw) translateY(-0.125vw);
+}
+.modern_house .door-b__right,
+.modern_house .door-t__right {
+  width: 0.5vw;
+  height: 0.125vw;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(6vw) translateX(-0.5vw) translateY(-0.125vw);
+}
+.modern_house .door-b__left,
+.modern_house .door-t__left {
+  width: 0.5vw;
+  height: 0.125vw;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-0.125vw);
+}
+.modern_house .door-b__top,
+.modern_house .door-t__top {
+  width: 6vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: translateZ(0.125vw);
+}
+.modern_house .door-b__bottom,
+.modern_house .door-t__bottom {
+  width: 6vw;
+  height: 0.5vw;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-6vw);
+}
+.modern_house .door-b__front,
+.modern_house .door-t__front {
+  background-color: #413e5c;
+}
+.modern_house .door-b__back,
+.modern_house .door-t__back {
+  background-color: #716d9d;
+}
+.modern_house .door-b__right,
+.modern_house .door-t__right {
+  background-color: #716d9d;
+}
+.modern_house .door-b__left,
+.modern_house .door-t__left {
+  background-color: #716d9d;
+}
+.modern_house .door-b__top,
+.modern_house .door-t__top {
+  background-color: #716d9d;
+}
+.modern_house .door-b__bottom,
+.modern_house .door-t__bottom {
+  background-color: #716d9d;
+}
+
+.modern_house .door-t {
+  transform: translateZ(8.4vw);
+}
